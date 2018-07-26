@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace HelloWorld
 {
@@ -36,14 +37,14 @@ namespace HelloWorld
 
             ///Adding watcher///
             array[arrsize] = num;
-            
+
             ///Looking for chosen value///
             int pos = -1;
             for(int i = 0; i < array.Length; i++)
             {
                 if(array[i] == num)
                 {
-                    if(i == arrsize)
+                    if(i == arrsize)    //Our watcher
                     {
                         Console.WriteLine("The number you are looking for doesn't exist in this array.");
                     }
@@ -52,8 +53,9 @@ namespace HelloWorld
                         pos = i;
                         Console.WriteLine("The number you are looking for lies in " + pos + " position.");
                     }
+                    break;
                 }
-            }          
+            }
         }
     }
 }
